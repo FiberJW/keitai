@@ -1,7 +1,4 @@
 {
-  "name": "keitai",
-  "version": "0.0.1",
-  "main": "index.js",
-  "author": "Juwan Wheatley",
-  "license": "MIT"
+  "private": true,
+  "workspaces": "packages/*"
 }
