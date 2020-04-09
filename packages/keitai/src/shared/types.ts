@@ -25,3 +25,5 @@ export type ImageSt<ThemeT> =
   | ImageStyle
   | FunctionalStyle<ThemeT, ImageStyle>
   | (ImageStyle | FunctionalStyle<ThemeT, ImageStyle>)[];
+
+export type St<ThemeT> = ViewSt<ThemeT> | TextSt<ThemeT> | ImageSt<ThemeT>;

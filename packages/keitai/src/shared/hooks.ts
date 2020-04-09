@@ -1,9 +1,9 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { Dimensions, ScaledSize, StyleSheet } from "react-native";
-import { StType, DimensionsT } from "./types";
+import { St, DimensionsT } from "./types";
 
 export function makeUseSt<ThemeT>(theme: ThemeT) {
-  function useSt(st: StType<ThemeT>) {
+  function useSt(st: St<ThemeT>) {
     const [dimensions, setDimensions] = useState<DimensionsT>({
       window: Dimensions.get("window"),
       screen: Dimensions.get("screen"),
