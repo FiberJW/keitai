@@ -1,4 +1,5 @@
 import { ImageStyle, TextStyle, ViewStyle, ScaledSize } from "react-native";
+import { ColorSchemeName } from "react-native-appearance";
 
 export type DimensionsT = {
   window: ScaledSize;
@@ -6,7 +7,7 @@ export type DimensionsT = {
 };
 
 export type FunctionalStyle<ThemeT, Style> = (values: {
-  colorScheme: "light" | "dark";
+  colorScheme: ColorSchemeName;
   dimensions: DimensionsT;
   theme: ThemeT;
 }) => Style;

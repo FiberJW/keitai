@@ -17,12 +17,14 @@ export const theme = {
   },
   colors: {
     background: {
+      "no-preference": "black",
       dark: "black",
       light: "white",
     },
-    headerColor: { dark: "white", light: "black" },
-    toggleButtonBG: { dark: "white", light: "black" },
+    headerColor: { "no-preference": "white", dark: "white", light: "black" },
+    toggleButtonBG: { "no-preference": "white", dark: "white", light: "black" },
     toggleButtonLabel: {
+      "no-preference": "black",
       dark: "black",
       light: "white",
     },

@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
 import { Dimensions, ScaledSize, StyleSheet } from "react-native";
 import { St, DimensionsT } from "./types";
+import { useColorScheme } from "react-native-appearance";
 
 export function makeUseSt<ThemeT>(theme: ThemeT) {
   function useSt(st: St<ThemeT>) {
@@ -8,6 +9,8 @@ export function makeUseSt<ThemeT>(theme: ThemeT) {
       window: Dimensions.get("window"),
       screen: Dimensions.get("screen"),
     });
+
+    const colorScheme = useColorScheme();
 
     const onChange = useCallback(function onChange({
       window,
@@ -33,14 +36,17 @@ export function makeUseSt<ThemeT>(theme: ThemeT) {
           if (typeof s === "function") {
             Object.assign(
               style,
-              s({ colorScheme: "light", dimensions, theme })
+              s({ colorScheme: colorScheme, dimensions, theme })
             );
           } else {
             Object.assign(style, st);
           }
         }
       } else if (typeof st === "function") {
-        Object.assign(style, st({ colorScheme: "light", dimensions, theme }));
+        Object.assign(
+          style,
+          st({ colorScheme: colorScheme, dimensions, theme })
+        );
       } else {
         Object.assign(style, st);
       }
@@ -48,7 +54,7 @@ export function makeUseSt<ThemeT>(theme: ThemeT) {
       return StyleSheet.create({
         style,
       });
-    }, [dimensions, st]);
+    }, [dimensions, st, colorScheme]);
 
     return compiledStyleSheet.style;
   }

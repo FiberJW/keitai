@@ -4,11 +4,9 @@ import { Components } from "./design-system-primitives";
 const { View, Text, TouchableOpacity } = Components;
 
 export default function App() {
-  const [colorScheme, setColorScheme] = useState<"dark" | "light">("dark");
-
   return (
     <View
-      st={({ theme }) => {
+      st={({ theme, colorScheme }) => {
         return {
           backgroundColor: theme.colors.background[colorScheme],
           flex: 1,
@@ -18,7 +16,7 @@ export default function App() {
       }}
     >
       <Text
-        st={({ theme }) => {
+        st={({ theme, colorScheme }) => {
           return {
             fontFamily: theme.typography.fonts.Inter,
             color: theme.colors.headerColor[colorScheme],
@@ -30,7 +28,7 @@ export default function App() {
         Keitai
       </Text>
       <TouchableOpacity
-        st={({ theme }) => {
+        st={({ theme, colorScheme }) => {
           return {
             backgroundColor: theme.colors.toggleButtonBG[colorScheme],
             padding: 8,
@@ -38,15 +36,11 @@ export default function App() {
           };
         }}
         onPress={() => {
-          if (colorScheme === "dark") {
-            setColorScheme("light");
-          } else {
-            setColorScheme("dark");
-          }
+          alert("Hi, Developer :)");
         }}
       >
         <Text
-          st={({ theme }) => {
+          st={({ theme, colorScheme }) => {
             return {
               color: theme.colors.toggleButtonLabel[colorScheme],
               fontSize: theme.typography.sizes.buttonLabel,
