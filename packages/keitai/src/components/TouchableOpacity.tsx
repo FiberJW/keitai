@@ -3,8 +3,8 @@ import {
   TouchableOpacity as RNTouchableOpacity,
   TouchableOpacityProps as RNTouchableOpacityProps,
 } from "react-native";
-import { ViewSt } from "../shared/types";
-import { makeUseSt } from "../shared/hooks";
+import { ViewSt } from "../types";
+import { makeUseSt } from "../hooks";
 
 type TouchableOpacityProps<ThemeT> = RNTouchableOpacityProps & {
   st?: ViewSt<ThemeT>;

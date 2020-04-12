@@ -3,8 +3,8 @@ import {
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
 } from "react-native";
-import { TextSt } from "../shared/types";
-import { makeUseSt } from "../shared/hooks";
+import { TextSt } from "../types";
+import { makeUseSt } from "../hooks";
 
 type TextInputProps<ThemeT> = RNTextInputProps & {
   st?: TextSt<ThemeT>;

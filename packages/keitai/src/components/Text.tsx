@@ -1,7 +1,7 @@
 import React, { forwardRef, Ref } from "react";
 import { Text as RNText, TextProps as RNTextProps } from "react-native";
-import { TextSt } from "../shared/types";
-import { makeUseSt } from "../shared/hooks";
+import { TextSt } from "../types";
+import { makeUseSt } from "../hooks";
 
 type TextProps<ThemeT> = RNTextProps & {
   st?: TextSt<ThemeT>;

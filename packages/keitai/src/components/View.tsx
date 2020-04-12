@@ -1,7 +1,7 @@
 import React, { forwardRef, Ref } from "react";
 import { View as RNView, ViewProps as RNViewProps } from "react-native";
-import { ViewSt } from "../shared/types";
-import { makeUseSt } from "../shared/hooks";
+import { ViewSt } from "../types";
+import { makeUseSt } from "../hooks";
 
 type ViewProps<ThemeT> = RNViewProps & {
   st?: ViewSt<ThemeT>;
