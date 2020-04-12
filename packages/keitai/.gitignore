@@ -4,4 +4,3 @@ npm-debug.*
 yarn-error.log
 # macOS
 .DS_Store
-build
