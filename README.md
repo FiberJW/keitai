@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="stylehooks artwork" src="./banner.jpg">
+  <img alt="banner" src="./banner.jpg">
 </p>
 
 <h3 align="center" style="font-weight:600">
@@ -21,3 +21,11 @@
 [![supports web](https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff)](https://github.com/expo/expo)
 
 </div>
+
+This is a POC of an alternative RN component API that supports theming, responsive styles, and color scheme preferences in the component's props.
+
+To use this magic, use the `st` prop instead of `style`.
+
+Check out the [demo](./packages/demo/App.tsx) to learn more about how to use it.
+
+I don't intend to maintain this actively, but feel free to use the code or ideas here to build something :)

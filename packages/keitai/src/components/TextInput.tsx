@@ -1,26 +1,28 @@
 import React, { forwardRef, Ref } from "react";
 import {
-  TextInput as RNTextInput,
-  TextInputProps as RNTextInputProps,
+  TouchableHighlight as RNTouchableHighlight,
+  TouchableHighlightProps as RNTouchableHighlightProps,
 } from "react-native";
 import { TextSt } from "../types";
 import { makeUseSt } from "../hooks";
 
-type TextInputProps<ThemeT> = RNTextInputProps & {
+type TouchableHighlightProps<ThemeT> = RNTouchableHighlightProps & {
   st?: TextSt<ThemeT>;
 };
 
-export function makeTextInput<ThemeT>(
+export function makeTouchableHighlight<ThemeT>(
   theme: ThemeT
-): React.FC<TextInputProps<ThemeT>> {
+): React.FC<TouchableHighlightProps<ThemeT>> {
   const { useSt } = makeUseSt(theme);
 
-  return forwardRef(function TextInput(
-    { st, ...rest }: TextInputProps<ThemeT>,
-    ref: Ref<RNTextInput>
+  return forwardRef(function TouchableHighlight(
+    { st, ...rest }: TouchableHighlightProps<ThemeT>,
+    ref: Ref<RNTouchableHighlight>
   ) {
     const style = useSt(st ?? {});
 
-    return <RNTextInput {...rest} ref={ref} style={[rest.style, style]} />;
+    return (
+      <RNTouchableHighlight {...rest} ref={ref} style={[rest.style, style]} />
+    );
   });
 }
