@@ -18,7 +18,7 @@ export default function App() {
       <Text
         st={({ theme, colorScheme }) => {
           return {
-            fontFamily: theme.typography.fonts.Inter,
+            fontFamily: theme.typography.fonts.Serif,
             color: theme.colors.headerColor[colorScheme],
             fontSize: theme.typography.sizes.h1,
             marginBottom: 16,
@@ -42,6 +42,7 @@ export default function App() {
         <Text
           st={({ theme, colorScheme }) => {
             return {
+              fontFamily: theme.typography.fonts.Serif,
               color: theme.colors.toggleButtonLabel[colorScheme],
               fontSize: theme.typography.sizes.buttonLabel,
             };

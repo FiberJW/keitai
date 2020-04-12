@@ -4,10 +4,10 @@ import { Platform } from "react-native";
 export const theme = {
   typography: {
     fonts: {
-      Inter: Platform.select({
+      Serif: Platform.select({
         ios: "Cochin",
-        android: "Roboto",
-        web: "sans-serif",
+        android: "notoserif",
+        web: "serif",
       }),
     },
     sizes: {
