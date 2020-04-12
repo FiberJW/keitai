@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Components } from "./design-system-primitives";
 
-const { View, Text } = Components;
+const { View, Text, TouchableOpacity } = Components;
 
 export default function App() {
+  const [colorScheme, setColorScheme] = useState<"dark" | "light">("dark");
+
   return (
     <View
-      st={({ theme, dimensions }) => {
+      st={({ theme }) => {
         return {
-          flexDirection: dimensions.window.width > 300 ? "row" : "column",
-          backgroundColor: theme.colors.background,
+          backgroundColor: theme.colors.background[colorScheme],
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
         };
       }}
     >
@@ -17,12 +21,41 @@ export default function App() {
         st={({ theme }) => {
           return {
             fontFamily: theme.typography.fonts.Inter,
-            color: theme.colors.text,
+            color: theme.colors.headerColor[colorScheme],
+            fontSize: theme.typography.sizes.h1,
+            marginBottom: 16,
           };
         }}
       >
-        Hello World
+        Keitai
       </Text>
+      <TouchableOpacity
+        st={({ theme }) => {
+          return {
+            backgroundColor: theme.colors.toggleButtonBG[colorScheme],
+            padding: 8,
+            borderRadius: 4,
+          };
+        }}
+        onPress={() => {
+          if (colorScheme === "dark") {
+            setColorScheme("light");
+          } else {
+            setColorScheme("dark");
+          }
+        }}
+      >
+        <Text
+          st={({ theme }) => {
+            return {
+              color: theme.colors.toggleButtonLabel[colorScheme],
+              fontSize: theme.typography.sizes.buttonLabel,
+            };
+          }}
+        >
+          Press Me
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

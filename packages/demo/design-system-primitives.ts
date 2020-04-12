@@ -10,10 +10,22 @@ export const theme = {
         web: "sans-serif",
       }),
     },
+    sizes: {
+      h1: 32,
+      buttonLabel: 24,
+    },
   },
   colors: {
-    background: "black",
-    text: "white",
+    background: {
+      dark: "black",
+      light: "white",
+    },
+    headerColor: { dark: "white", light: "black" },
+    toggleButtonBG: { dark: "white", light: "black" },
+    toggleButtonLabel: {
+      dark: "black",
+      light: "white",
+    },
   },
 };
 

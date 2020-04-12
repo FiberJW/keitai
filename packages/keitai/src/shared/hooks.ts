@@ -48,7 +48,7 @@ export function makeUseSt<ThemeT>(theme: ThemeT) {
       return StyleSheet.create({
         style,
       });
-    }, [dimensions]);
+    }, [dimensions, st]);
 
     return compiledStyleSheet.style;
   }
