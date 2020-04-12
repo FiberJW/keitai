@@ -1,19 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Components } from "./design-system-primitives";
+
+const { View, Text } = Components;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <View
+      st={({ theme, dimensions }) => {
+        return {
+          flexDirection: dimensions.window.width > 300 ? "row" : "column",
+          backgroundColor: theme.colors.background,
+        };
+      }}
+    >
+      <Text
+        st={({ theme }) => {
+          return {
+            fontFamily: theme.typography.fonts.Inter,
+            color: theme.colors.text,
+          };
+        }}
+      >
+        Hello World
+      </Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

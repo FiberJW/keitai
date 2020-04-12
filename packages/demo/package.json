@@ -1,5 +1,7 @@
 {
   "main": "__generated__/AppEntry.js",
+  "name": "keitai-demo",
+  "version": "0.1.0",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -12,6 +14,7 @@
     "expo": "~37.0.3",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
+    "keitai": "~0.1.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-screens": "~2.2.0",
     "react-native-web": "~0.11.7"
